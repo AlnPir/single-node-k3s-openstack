@@ -19,15 +19,15 @@ data "cloudinit_config" "k3s_master_config" {
   part {
     filename     = "cloudinit.yml"
     content_type = "text/cloud-config"
-    content      = templatefile("scripts/cloudinit.yml", {
+    content = templatefile("scripts/cloudinit.yml", {
       sshkey = var.sshkey
     })
   }
   part {
     filename     = "k3s_master.yml"
     content_type = "text/cloud-config"
-    content      = templatefile("scripts/k3s_master.yml", {
-      self_ip    = self.network[0].fixed_ip_v4
+    content = templatefile("scripts/k3s_master.yml", {
+      self_ip = self.network[0].fixed_ip_v4
     })
   }
 }

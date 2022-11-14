@@ -1,2 +1,2 @@
 runcmd:
-  - curl -sfL https://get.k3s.io | K3S_URL=https://${openstack_compute_instance_v2.k3s_master[0].network[0].fixed_ip_v4}:6443 K3S_TOKEN=${nodetoken} sh -
+  - curl -sfL https://get.k3s.io | K3S_URL=https://${self_ip}:6443 K3S_TOKEN=${nodetoken} sh -
