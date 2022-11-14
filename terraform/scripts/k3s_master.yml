@@ -1,0 +1,2 @@
+runcmd:
+  - curl -sfL https://get.k3s.io | sh -s - --bind-address ${self_ip}
